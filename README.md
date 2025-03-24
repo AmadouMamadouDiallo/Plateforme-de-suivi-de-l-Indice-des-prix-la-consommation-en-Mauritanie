@@ -1,11 +1,12 @@
 <p align="center">
-  <img src="https://via.placeholder.com/800x250?text=Suivi+de+l'Indice+des+Prix+à+la+Consommation+en+Mauritanie" alt="Bannière du projet">
+  <img src="https://placehold.co/800x250/000000/FFFFFF?text=Suivi+de+l%27Indice+des+Prix+à+la+Consommation+en+Mauritanie&font=roboto"
+ alt="Bannière du projet">
 </p>
 
 <h1 align="center">📊 Suivi de l'Indice des Prix à la Consommation en Mauritanie</h1>
 
 <p align="center">
-  <b>Une plateforme interactive pour analyser l'évolution de l'IPC en Mauritanie.</b>  
+  <b>Une plateforme interactive pour analyser l'évolution de l'INPC en Mauritanie.</b>  
 </p>
 
 <p align="center">
