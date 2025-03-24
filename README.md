@@ -78,6 +78,10 @@
 > **Ajoute ici des captures d’écran réelles de ton projet !**  
 
 ---
+## Contact et Liens
+- **LinkedIn** : [Mon profil LinkedIn](https://www.linkedin.com/in/amadou-mamadou-diallo)
+- **Email** : [mon.email@example.com](mailto:mon.email@example.com)
+
 
 ## 📦 Installation & Utilisation  
 
