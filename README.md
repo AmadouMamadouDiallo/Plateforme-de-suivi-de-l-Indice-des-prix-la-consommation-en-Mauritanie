@@ -79,8 +79,8 @@
 
 ---
 ## Contact et Liens
-- **LinkedIn** : [Mon profil LinkedIn](https://www.linkedin.com/in/amadou-mamadou-diallo)
-- **Email** : [mon.email@example.com](mailto:mon.email@example.com)
+- **LinkedIn** : [Mon profil LinkedIn](www.linkedin.com/in/amadou-diallo-ing04)
+- **Email** : [mon.email@example.com](23217@esp.mr)
 
 
 ## 📦 Installation & Utilisation  
