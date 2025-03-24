@@ -75,7 +75,7 @@ Le principal objectif de ce projet est de fournir une plateforme **dynamique** e
 
 ## 📸 Aperçu Visuel  
 
-### Vue d'ensemble du tableau de bord :
+### Vue d'une partie du tableau de bord :
 ![Tableau de bord](images/a.png)
 
 ### Visualisation de quelques produit :
