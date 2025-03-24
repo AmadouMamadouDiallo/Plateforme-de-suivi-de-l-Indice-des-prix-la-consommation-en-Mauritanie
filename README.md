@@ -79,7 +79,7 @@
 
 ---
 ## Contact et Liens
-- **LinkedIn** : [Mon profil LinkedIn](www.linkedin.com/in/amadou-diallo-ing04)
+- **LinkedIn** : www.linkedin.com/in/amadou-diallo-ing04
 - **Email** : 23217@esp.mr
 
 
