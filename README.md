@@ -17,8 +17,7 @@
 🔹 [⚙️ Technologies Utilisées](#%EF%B8%8F-technologies-utilisées)  
 🔹 [🚀 Fonctionnalités Clés](#-fonctionnalités-clés)  
 🔹 [📸 Aperçu Visuel](#-aperçu-visuel)  
-🔹 [📦 Installation & Utilisation](#-installation--utilisation)  
-🔹 [💡 Améliorations Futures](#-améliorations-futures)  
+🔹 [📦 Installation & Utilisation](#-installation--utilisation)   
 🔹 [📬 Contact](#-contact)  
 
 ---
