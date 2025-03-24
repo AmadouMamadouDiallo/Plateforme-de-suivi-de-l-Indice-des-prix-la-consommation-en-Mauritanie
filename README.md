@@ -70,12 +70,11 @@
 
 ## 📸 Aperçu Visuel  
 
-<p align="center">
-  <img src="https://via.placeholder.com/600x300?text=Tableau+de+Bord+IPC" alt="Tableau de bord">
-  <img src="https://via.placeholder.com/600x300?text=Graphiques+dynamiques" alt="Graphiques dynamiques">
+p align="center">
+  <img src="images/dashboard.png" alt="Tableau de bord" width="600" height="300">
+  <img src="images/graphique.png" alt="Graphiques dynamiques" width="600" height="300">
 </p>
 
-> **Ajoute ici des captures d’écran réelles de ton projet !**  
 
 ---
 ## Contact et Liens
