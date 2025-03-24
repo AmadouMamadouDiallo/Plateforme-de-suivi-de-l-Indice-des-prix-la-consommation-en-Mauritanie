@@ -1,20 +1,20 @@
 <p align="center">
-  
+  <img src="images/logo.png" alt="Logo du projet" width="200"/>
 </p>
 
-<h1 align="center">📊 Suivi de l'Indice des Prix à la Consommation en Mauritanie</h1>
+<h1 align="center">📊 **Suivi de l'Indice des Prix à la Consommation en Mauritanie**</h1>
 
 <p align="center">
-  <b>Une plateforme interactive pour analyser l'évolution de l'INPC en Mauritanie.</b>  
+  <b>Une plateforme interactive pour analyser l'évolution de l'INPC en Mauritanie, comprendre les dynamiques économiques et prendre des décisions éclairées.</b>  
 </p>
 
 <p align="center">
-  🔍 <i>Suivi des prix</i> | 📈 <i>Visualisation des tendances</i> | 💰 <i>Indicateurs économiques</i>  
+  🔍 <i>Suivi des prix</i> | 📈 <i>Visualisation des tendances économiques</i> | 💰 <i>Indicateurs économiques clés</i>  
 </p>
 
 ---
 
-## 🌍 Table des Matières  
+## 🌍 Table des Matières
 🔹 [📖 Description du Projet](#-description-du-projet)  
 🔹 [🎯 Objectif](#-objectif)  
 🔹 [⚙️ Technologies Utilisées](#%EF%B8%8F-technologies-utilisées)  
@@ -27,63 +27,68 @@
 ---
 
 ## 📖 Description du Projet  
-> **Un outil moderne pour comprendre l'évolution des prix en Mauritanie.**  
-📊 Interface intuitive pour explorer les variations de prix  
-📉 Analyse détaillée des tendances économiques  
-🛒 Comparaison des catégories de produits  
+**Suivi de l'Indice des Prix à la Consommation en Mauritanie** est un outil interactif conçu pour suivre et analyser les fluctuations des prix des biens et services en Mauritanie. Grâce à des graphiques interactifs et des filtres avancés, cette plateforme vous permet de comprendre en profondeur les dynamiques économiques du pays.
 
----
+- **📊 Interface intuitive** pour explorer les variations des prix dans différentes catégories de produits.
+- **📉 Analyse détaillée** des tendances économiques avec des visualisations de données dynamiques.
+- **🛒 Comparaison** des prix entre régions et catégories, permettant une vue d'ensemble complète des tendances des prix.
+
+--- 
 
 ## 🎯 Objectif  
-💡 **Offrir une visualisation dynamique et précise des tendances économiques.**  
+Le principal objectif de ce projet est de fournir une plateforme **dynamique** et **précise** pour l’analyse des prix à la consommation en Mauritanie. En offrant des outils interactifs, ce projet vise à :
+
+- **Faciliter l'accès** à l'information économique pour les chercheurs, économistes, décideurs, et citoyens.
+- **Soutenir la prise de décisions stratégiques** dans le domaine économique, notamment pour les politiques publiques et les entreprises.
+- **Proposer une plateforme évolutive** qui pourra intégrer d'autres indicateurs économiques au fur et à mesure.
 
 🎯 **Pour qui ?**  
-✔️ **Économistes & chercheurs** 📊  
-✔️ **Gouvernements & institutions** 📈  
-✔️ **Entrepreneurs & investisseurs** 💰  
-✔️ **Citoyens curieux des tendances économiques** 🏠  
+- **Économistes & chercheurs** 📊  
+- **Gouvernements & institutions** 📈  
+- **Entrepreneurs & investisseurs** 💰  
+- **Citoyens curieux des tendances économiques** 🏠  
 
 ---
 
 ## ⚙️ Technologies Utilisées  
 
 | 🛠️ Technologie | 🚀 Rôle |
-|------------|------|
-| 🐍 **Python** | Backend et traitement des données |
-| 🌍 **Django** | Développement du serveur web |
+|----------------|--------|
+| 🐍 **Python**   | Backend et traitement des données |
+| 🌍 **Django**   | Développement du serveur web |
 | 🗄️ **PostgreSQL** | Base de données |
-| 🎨 **HTML / CSS / JS** | Interface utilisateur |
-| 📊 **Chart.js / D3.js** | Visualisation des tendances |
-| 🐳 **Docker** | Conteneurisation et déploiement |
+| 🎨 **HTML / CSS / JS** | Conception et développement de l'interface utilisateur |
+| 📊 **Chart.js / D3.js** | Visualisation interactive des données |
+| 🐳 **Docker**   | Conteneurisation et déploiement |
 
 ---
 
 ## 🚀 Fonctionnalités Clés  
-✅ **📊 Tableau de bord interactif** – Suivi des prix par produit et région  
-✅ **🔍 Filtres avancés** – Catégories, périodes spécifiques  
-✅ **📈 Visualisation dynamique** – Graphiques (courbes, heatmaps, histogrammes...)  
-✅ **📡 API RESTful** – Récupération des données JSON  
-✅ **🔐 Mode Admin** – Gestion des données via Django Admin  
-✅ **🐳 Déploiement Dockerisé** – Exécution rapide sans dépendances locales  
+✅ **📊 Tableau de bord interactif** – Suivi des prix par produit et région en temps réel.  
+✅ **🔍 Filtres avancés** – Sélection de catégories, périodes spécifiques, et comparaisons géographiques.  
+✅ **📈 Visualisation dynamique** – Graphiques interactifs comme les courbes de tendance, heatmaps, histogrammes, et plus encore.  
+✅ **📡 API RESTful** – Accès aux données sous forme de JSON pour les intégrateurs et développeurs.  
+✅ **🔐 Mode Admin** – Interface dédiée pour gérer et modifier les données via Django Admin.  
+✅ **🐳 Déploiement Dockerisé** – Facilité d'exécution et de déploiement sans configuration locale complexe.
 
 ---
 
 ## 📸 Aperçu Visuel  
 
-<img src="images/a.png" alt="Tableau de bord" width="600" height="300">
-<img src="images/b.png" alt="Graphiques dynamiques" width="600" height="300">
+### Vue d'ensemble du tableau de bord :
+![Tableau de bord](images/a.png)
 
+### Visualisation de quelques produit :
+![Graphiques dynamiques](images/b.png)
 
 ---
-## Contact et Liens
-- **LinkedIn** : www.linkedin.com/in/amadou-diallo-ing04
-- **Email** : 23217@esp.mr
-
 
 ## 📦 Installation & Utilisation  
 
+Suivez ces étapes pour installer et lancer le projet sur votre machine locale :
+
 ```bash
-# 1️⃣ Cloner le projet
+# 1️⃣ Cloner le projet depuis GitHub
 git clone https://github.com/AmadouMamadouDiallo/Suivi-de-I-indice-des-prix-a-la-consommation-en-Mauritanie.git
 cd Suivi-de-I-indice-des-prix-a-la-consommation-en-Mauritanie
 
@@ -92,9 +97,11 @@ python -m venv venv
 source venv/bin/activate  # (Sous Windows: venv\Scripts\activate)
 pip install -r requirements.txt
 
-# 3️⃣ Lancer le serveur Django
+# 3️⃣ Appliquer les migrations de la base de données
 python manage.py migrate
+
+# 4️⃣ Lancer le serveur Django
 python manage.py runserver
 
-# 4️⃣ Accéder à l'application
+# 5️⃣ Accéder à l'application via votre navigateur
 http://127.0.0.1:8000/
