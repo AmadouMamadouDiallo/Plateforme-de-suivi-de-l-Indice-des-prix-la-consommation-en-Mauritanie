@@ -1,5 +1,5 @@
 
-<h1 align="center">📊 Pleteforme de suivi de l'Indice des Prix à la Consommation en Mauritanie</h1>
+<h1 align="center">📊 Plateforme de suivi de l'indice des prix à la consommation en Mauritanie</h1>
 
 <p align="center">
   <b>Une plateforme interactive pour analyser l'évolution de l'INPC en Mauritanie, comprendre les dynamiques économiques et prendre des décisions éclairées.</b>  
