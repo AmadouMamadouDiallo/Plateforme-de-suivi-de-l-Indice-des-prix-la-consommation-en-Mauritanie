@@ -70,10 +70,8 @@
 
 ## 📸 Aperçu Visuel  
 
-p>
-  <img src="images/dashboard.png" alt="Tableau de bord" width="600" height="300">
-  <img src="images/graphique.png" alt="Graphiques dynamiques" width="600" height="300">
-</p>
+<img src="images/dashboard.png" alt="Tableau de bord" width="600" height="300">
+<img src="images/graphique.png" alt="Graphiques dynamiques" width="600" height="300">
 
 
 ---
