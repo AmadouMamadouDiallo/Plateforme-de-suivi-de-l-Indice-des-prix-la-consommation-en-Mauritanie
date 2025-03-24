@@ -80,7 +80,7 @@
 ---
 ## Contact et Liens
 - **LinkedIn** : [Mon profil LinkedIn](www.linkedin.com/in/amadou-diallo-ing04)
-- **Email** : [mon.email@example.com](23217@esp.mr)
+- **Email** : 23217@esp.mr
 
 
 ## 📦 Installation & Utilisation  
