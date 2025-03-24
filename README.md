@@ -105,3 +105,10 @@ python manage.py runserver
 
 # 5️⃣ Accéder à l'application via votre navigateur
 http://127.0.0.1:8000/
+
+📬 Contact
+Pour toute question, suggestion ou collaboration, n'hésitez pas à me contacter :
+
+LinkedIn : www.linkedin.com/in/amadou-diallo-ing04
+
+Email : 23217@esp.mr
