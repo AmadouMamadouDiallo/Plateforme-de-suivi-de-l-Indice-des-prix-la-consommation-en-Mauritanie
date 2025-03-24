@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accueil - INPC</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+        nav {
+            background: #028a0f; /* Vert mauritanien */
+            padding: 15px;
+            display: flex;
+            justify-content: center;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            margin: 0 15px;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        nav a:hover {
+            background: #026d0c; /* Vert foncé pour le hover */
+        }
+        header {
+            background: linear-gradient(90deg, #028a0f, #ffd700, #e31b23); /* Vert, Jaune, Rouge */
+            color: white;
+            padding: 20px;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        section {
+            margin: 20px auto;
+            padding: 20px;
+            width: 80%;
+            max-width: 800px;
+            background: white;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+            border-radius: 15px;
+        }
+        h1 {
+            color: #028a0f;
+        }
+        p {
+            font-size: 18px;
+            color: #333;
+            line-height: 1.8;
+        }
+        .btn {
+            display: inline-block;
+            padding: 12px 25px;
+            margin-top: 20px;
+            background: #ffd700; /* Jaune mauritanien */
+            color: #333;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 18px;
+            font-weight: bold;
+            box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+        }
+        .btn:hover {
+            background: #e6c200; /* Jaune foncé pour le hover */
+        }
+        footer {
+            margin-top: 20px;
+            padding: 15px;
+            background: #028a0f;
+            color: white;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav>
+    <a href="/">Accueil</a>
+    <a href="/produits/">Produits</a>
+    <a href="/produits/types">Type produits</a>
+
+</nav>
+
+<header>
+    🌍 Indice National des Prix à la Consommation (INPC)
+</header>
+
+<section>
+    <h1>Bienvenue sur l'application INPC</h1>
+    <p>
+        L'ANSADE modernise son système pour suivre les prix des produits essentiels en Mauritanie
+        et calculer l'Indice National des Prix à la Consommation (INPC).
+    </p>
+    <p>
+        Ce projet fournit des analyses détaillées sur l'évolution des prix, afin d'aider à la prise de décision 
+        économique et améliorer la qualité de vie des citoyens.
+    </p>
+    <a href="/produits/" class="btn">Accéder aux produits </a>
+</section>
+
+<footer>
+    © 2025 ANSADE - Tous droits réservés
+</footer>
+
+</body>
+</html>

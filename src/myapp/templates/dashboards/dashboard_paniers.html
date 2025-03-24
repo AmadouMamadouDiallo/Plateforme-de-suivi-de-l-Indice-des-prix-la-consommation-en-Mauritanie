@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Paniers</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
+<body>
+
+<div class="container mt-5">
+    <h2>🛍️ Dashboard des Paniers</h2>
+
+    <input type="date" id="dateDebut" class="form-control w-25 d-inline">
+    <input type="date" id="dateFin" class="form-control w-25 d-inline">
+    <button onclick="applyFilter()" class="btn btn-primary">Filtrer</button>
+
+    <canvas id="pieChart"></canvas>
+</div>
+
+<script>
+    function applyFilter() {
+        let debut = document.getElementById('dateDebut').value;
+        let fin = document.getElementById('dateFin').value;
+        window.location.href = `?date_debut=${debut}&date_fin=${fin}`;
+    }
+</script>
+</body>
+</html>

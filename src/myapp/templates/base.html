@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Mon Projet Django{% endblock %}</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+        .navbar {
+            background: #028a0f; /* Vert mauritanien */
+        }
+        .navbar .container {
+            display: flex;
+            justify-content: center; /* Centrer le contenu */
+        }
+        .navbar-nav {
+            display: flex;
+            gap: 2rem; /* Espacement entre les liens */
+        }
+        .navbar-brand, .nav-link {
+            color: white !important;
+            font-size: 1.2rem; /* Augmenter la taille des écritures */
+        }
+        .navbar-brand:hover, .nav-link:hover {
+            color: #ffd700 !important; /* Jaune mauritanien */
+        }
+        .header-banner {
+            background: linear-gradient(to right, #028a0f, #ffd700, #e31b23);
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+        .footer {
+            margin-top: 20px;
+            padding: 15px;
+            background: #028a0f;
+            color: white;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="/">Accueil</a></li>
+                <li class="nav-item"><a class="nav-link" href="{% url 'liste_produits' %}">Produits</a></li>
+                <li class="nav-item"><a class="nav-link" href="/administration">Administration</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Header Banner -->
+    <div class="header-banner">
+        <i class="fas fa-globe"></i> Indice National des Prix à la Consommation (INPC)
+    </div>
+
+    <!-- Main Content -->
+    {% block content %}
+    <!-- Le contenu de la page enfant sera inséré ici -->
+    {% endblock %}
+
+    <!-- Footer -->
+    <footer class="footer">
+        &copy; 2025 ANSADE - Tous droits réservés
+    </footer>
+
+</body>
+</html>

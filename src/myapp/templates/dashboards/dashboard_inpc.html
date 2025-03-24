@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard INPC</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body { 
+            font-family: Arial, sans-serif; 
+            background-color: #f4f4f4; 
+        }
+        .navbar {
+            background: linear-gradient(90deg, #016e0a, #028a0f); /* Dégradé vert */
+            padding: 12px 15px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15); /* Ombre douce */
+            border-radius: 0px 0px 10px 10px; /* Bords arrondis en bas */
+        }
+        
+        .navbar .nav-link {
+            color: white !important;
+            font-weight: bold;
+            transition: all 0.3s ease-in-out;
+            padding: 8px 15px;
+        }
+        
+        .navbar .nav-link:hover {
+            color: #ffd700 !important; /* Effet doré */
+            transform: scale(1.1);
+        }
+
+        /* Menu Dropdown */
+        .dropdown-menu {
+            background: white;
+            border-radius: 10px;
+            border: none;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
+            transition: all 0.3s ease-in-out;
+        }
+
+        .dropdown-menu .dropdown-item {
+            font-weight: bold;
+            transition: all 0.3s ease-in-out;
+            padding: 10px 15px;
+        }
+
+        .dropdown-menu .dropdown-item:hover {
+            background: #e6f9e6;
+            color: #028a0f;
+            border-radius: 5px;
+        }
+
+        /* Animation d'ouverture du dropdown */
+        .dropdown-menu {
+            transform: translateY(10px);
+            opacity: 0;
+            transition: all 0.3s ease-in-out;
+            display: none;
+        }
+
+        .dropdown:hover .dropdown-menu {
+            display: block;
+            opacity: 1;
+            transform: translateY(0px);
+        }
+
+        /* Bouton Toggle du menu */
+        .navbar-toggler {
+            border: none;
+            background: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+
+        .navbar-toggler:hover {
+            background: #ffd700;
+        }
+        
+        /* Ombre sous la navbar */
+        .shadow-sm {
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .card {
+            text-align: center; 
+            padding: 20px; 
+            background: white; 
+            border-radius: 10px; 
+            box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+        }
+        .chart-container { 
+            margin-top: 20px; 
+            padding: 20px; 
+            background: white; 
+            border-radius: 10px; 
+            box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1); 
+        }
+        .stat-box {
+            padding: 20px; 
+            border-radius: 10px; 
+            text-align: center; 
+            background: white; 
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            min-height: 120px; /* Hauteur uniforme */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+
+        .increase { color: green; font-weight: bold; }
+        .decrease { color: red; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg shadow-sm">
+        <div class="container">
+            <!-- Logo et Nom du Projet (Adapté à l'Indice de Prix à la Consommation) -->
+            <a class="navbar-brand d-flex align-items-center fw-bold text-light" href="/">
+                ANSADE INPC 
+            </a>
+    
+            <!-- Bouton Mobile -->
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+    
+            <!-- Contenu du Navbar -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    
+                    <!-- PRODUITS (Dropdown) -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle fw-bold" href="#" id="produitsDropdown" role="button" data-bs-toggle="dropdown">
+                            🛒 Produits
+                        </a>
+                        <ul class="dropdown-menu border-0 shadow">
+                            <li><a class="dropdown-item" href="{% url 'liste_produits' %}">📋 Liste des Produits</a></li>
+                            <li><a class="dropdown-item" href="{% url 'liste_types_produits' %}">🏷️ Types de Produits</a></li>
+                            <li><a class="dropdown-item" href="{% url 'liste_prix_produits' %}">💰 Prix des Produits</a></li>
+                        </ul>
+                    </li>
+    
+                    <!-- STRUCTURE (Dropdown) -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle fw-bold" href="#" id="structureDropdown" role="button" data-bs-toggle="dropdown">
+                            🏛️ Structure
+                        </a>
+                        <ul class="dropdown-menu border-0 shadow">
+                            <li><a class="dropdown-item" href="{% url 'liste_wilayas' %}">🌍 Wilayas</a></li>
+                            <li><a class="dropdown-item" href="{% url 'liste_moughataas' %}">📌 Moughataas</a></li>
+                            <li><a class="dropdown-item" href="{% url 'liste_communes' %}">🏡 Communes</a></li>
+                        </ul>
+                    </li>
+    
+                    <!-- Points de Vente -->
+                    <li class="nav-item">
+                        <a class="nav-link fw-bold" href="{% url 'liste_points_de_vente' %}">🏪 Points de Vente</a>
+                    </li>
+    
+                    <!-- Paniers -->
+                    <li class="nav-item">
+                        <a class="nav-link fw-bold" href="{% url 'liste_paniers' %}">🛍️ Paniers</a>
+                    </li>
+    
+                    <!-- Dashboard (Dropdown) -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle fw-bold" href="#" id="dashboardDropdown" role="button" data-bs-toggle="dropdown">
+                            📊 Dashboard
+                        </a>
+                        <ul class="dropdown-menu border-0 shadow">
+                            <li><a class="dropdown-item" href="{% url 'dashboard' %}">📊 Dashboard</a></li>
+                            <li><a class="dropdown-item" href="{% url 'dashboard_prix_produits' %}">💰 Dashboard Prix Produits</a></li>
+                            <li><a class="dropdown-item" href="{% url 'dashboard_inpc' %}">📈 Dashboard INPC</a></li>
+                        </ul>
+                    </li>
+    
+                    <!-- Déconnexion -->
+                    <li class="nav-item">
+                        <a href="#" class="nav-link text-danger fw-bold" data-bs-toggle="modal" data-bs-target="#logoutModal">🚪 Déconnexion</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+
+<div class="container mt-5">
+    <h2 class="text-center">📊 Tableau de Bord INPC</h2>
+
+    <!-- 🔍 Formulaire de filtre -->
+    <form method="GET" class="mb-4 text-center">
+        <label for="date_debut" class="fw-bold">📅 Période de début :</label>
+        <select name="date_debut" id="date_debut" class="form-select d-inline w-25">
+            {% for label, value in mois_annees.items %}
+                <option value="{{ value }}" {% if value == date_debut %}selected{% endif %}>{{ label }}</option>
+            {% endfor %}
+        </select>
+
+        <label for="date_fin" class="fw-bold">📅 Période de fin :</label>
+        <select name="date_fin" id="date_fin" class="form-select d-inline w-25">
+            {% for label, value in mois_annees.items %}
+                <option value="{{ value }}" {% if value == date_fin %}selected{% endif %}>{{ label }}</option>
+            {% endfor %}
+        </select>
+
+        <button type="submit" class="btn btn-primary">🔍 Appliquer</button>
+    </form>
+
+    <!-- 🏆 Indicateurs Clés -->
+    <div class="row">
+        <div class="col-md-4">
+            <div class="stat-box">
+                <h5>📈 INPC Moyen</h5>
+                <h3>{{ inpc_value|floatformat:2 }}</h3>
+                <p class="{% if variation_inpc > 0 %}increase{% else %}decrease{% endif %}">
+                    {% if variation_inpc > 0 %}⬆ +{{ variation_inpc|floatformat:2 }}%{% else %}⬇ {{ variation_inpc|floatformat:2 }}%{% endif %}
+                </p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="stat-box">
+                <h5>🛒 Produits Analyés</h5>
+                <h3>{{ stats.produits }}</h3>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="stat-box">
+                <h5>🏪 Points de Vente</h5>
+                <h3>{{ stats.points_de_vente }}</h3>
+            </div>
+        </div>
+    </div>
+
+    <!-- 📊 Graphiques -->
+    <div class="row mt-4">
+        <div class="col-md-8">
+            <div class="chart-container">
+                <h4>📉 Évolution de l'INPC</h4>
+                <canvas id="lineChart"></canvas>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <h5>🔝 Produits influents</h5>
+            <ul class="list-group">
+                {% for produit in top_produits %}
+                    <li class="list-group-item d-flex justify-content-between">
+                        <span>{{ produit.produit__nom }}</span>
+                        <strong>{{ produit.pourcentage|floatformat:2 }} %</strong>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+
+    <!-- 📊 Contribution des Produits -->
+    <div class="chart-container mt-4">
+        <h4>📊 Contribution des Produits à l'INPC</h4>
+        <canvas id="barChart"></canvas>
+    </div>
+</div>
+
+<script>
+    // 📉 Évolution de l'INPC
+    var ctx1 = document.getElementById('lineChart').getContext('2d');
+    var lineChart = new Chart(ctx1, {
+        type: 'line',
+        data: {
+            labels: [{% for label, value in mois_annees.items %} '{{ label }}', {% endfor %}],
+            datasets: [{
+                label: 'INPC',
+                data: [{% for label, value in mois_annees.items %} {{ inpc_value }}, {% endfor %}],
+                borderColor: 'green',
+                backgroundColor: 'rgba(0, 128, 0, 0.2)',
+                fill: true
+            }]
+        },
+        options: { responsive: true }
+    });
+
+    // 📊 Contribution des Produits à l'INPC
+    var ctx2 = document.getElementById('barChart').getContext('2d');
+    var barChart = new Chart(ctx2, {
+        type: 'bar',
+        data: {
+            labels: [{% for produit in top_produits %} '{{ produit.produit__nom }}', {% endfor %}],
+            datasets: [{
+                label: 'Contribution %',
+                data: [{% for produit in top_produits %} {{ produit.pourcentage }}, {% endfor %}],
+                backgroundColor: '#28a745',
+                borderColor: '#218838',
+                borderWidth: 1
+            }]
+        },
+        options: { responsive: true }
+    });
+</script>
+
+</body>
+</html>

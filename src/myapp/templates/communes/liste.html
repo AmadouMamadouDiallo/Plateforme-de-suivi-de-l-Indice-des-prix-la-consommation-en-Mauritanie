@@ -1,0 +1,373 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liste des Types de Produits</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+           /* Style Général */
+        .navbar {
+            background: linear-gradient(90deg, #016e0a, #028a0f); /* Dégradé vert */
+            padding: 12px 15px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15); /* Ombre douce */
+            border-radius: 0px 0px 10px 10px; /* Bords arrondis en bas */
+        }
+        
+        .navbar .nav-link {
+            color: white !important;
+            font-weight: bold;
+            transition: all 0.3s ease-in-out;
+            padding: 8px 15px;
+        }
+        
+        .navbar .nav-link:hover {
+            color: #ffd700 !important; /* Effet doré */
+            transform: scale(1.1);
+        }
+
+        /* Menu Dropdown */
+        .dropdown-menu {
+            background: white;
+            border-radius: 10px;
+            border: none;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
+            transition: all 0.3s ease-in-out;
+        }
+
+        .dropdown-menu .dropdown-item {
+            font-weight: bold;
+            transition: all 0.3s ease-in-out;
+            padding: 10px 15px;
+        }
+
+        .dropdown-menu .dropdown-item:hover {
+            background: #e6f9e6;
+            color: #028a0f;
+            border-radius: 5px;
+        }
+
+        /* Animation d'ouverture du dropdown */
+        .dropdown-menu {
+            transform: translateY(10px);
+            opacity: 0;
+            transition: all 0.3s ease-in-out;
+            display: none;
+        }
+
+        .dropdown:hover .dropdown-menu {
+            display: block;
+            opacity: 1;
+            transform: translateY(0px);
+        }
+
+        /* Bouton Toggle du menu */
+        .navbar-toggler {
+            border: none;
+            background: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+
+        .navbar-toggler:hover {
+            background: #ffd700;
+        }
+        
+        /* Ombre sous la navbar */
+        .shadow-sm {
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            color: #028a0f;
+            font-weight: bold;
+        }
+        .table-hover tbody tr:hover {
+            background-color: #e6f9e6;
+        }
+        .btn-primary {
+            background-color: #028a0f;
+            border: none;
+        }
+        .btn-primary:hover {
+            background-color: #026d0c;
+        }
+        .btn-danger {
+            background-color: #e31b23;
+            border: none;
+        }
+        .btn-danger:hover {
+            background-color: #b71a1b;
+        }
+        .btn-secondary {
+            background-color: #ffd700;
+            color: black;
+        }
+        .btn-secondary:hover {
+            background-color: #e6c200;
+        }
+        .modal-header {
+            background-color: #028a0f;
+            color: white;
+        }
+        .pagination .page-link {
+            color: #028a0f;
+        }
+        .pagination .page-item.active .page-link {
+            background-color: #028a0f;
+            border-color: #028a0f;
+            color: white;
+        }
+        .pagination .page-link:hover {
+            background-color: #e6f9e6;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg shadow-sm">
+        <div class="container">
+            <!-- Logo et Nom du Projet (Adapté à l'Indice de Prix à la Consommation) -->
+            <a class="navbar-brand d-flex align-items-center fw-bold text-light" href="/">
+                ANSADE INPC 
+            </a>
+    
+            <!-- Bouton Mobile -->
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+    
+            <!-- Contenu du Navbar -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    
+                    <!-- PRODUITS (Dropdown) -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle fw-bold" href="#" id="produitsDropdown" role="button" data-bs-toggle="dropdown">
+                            🛒 Produits
+                        </a>
+                        <ul class="dropdown-menu border-0 shadow">
+                            <li><a class="dropdown-item" href="{% url 'liste_produits' %}">📋 Liste des Produits</a></li>
+                            <li><a class="dropdown-item" href="{% url 'liste_types_produits' %}">🏷️ Types de Produits</a></li>
+                            <li><a class="dropdown-item" href="{% url 'liste_prix_produits' %}">💰 Prix des Produits</a></li>
+                        </ul>
+                    </li>
+    
+                    <!-- STRUCTURE (Dropdown) -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle fw-bold" href="#" id="structureDropdown" role="button" data-bs-toggle="dropdown">
+                            🏛️ Structure
+                        </a>
+                        <ul class="dropdown-menu border-0 shadow">
+                            <li><a class="dropdown-item" href="{% url 'liste_wilayas' %}">🌍 Wilayas</a></li>
+                            <li><a class="dropdown-item" href="{% url 'liste_moughataas' %}">📌 Moughataas</a></li>
+                            <li><a class="dropdown-item" href="{% url 'liste_communes' %}">🏡 Communes</a></li>
+                        </ul>
+                    </li>
+    
+                    <!-- Points de Vente -->
+                    <li class="nav-item">
+                        <a class="nav-link fw-bold" href="{% url 'liste_points_de_vente' %}">🏪 Points de Vente</a>
+                    </li>
+    
+                    <!-- Paniers -->
+                    <li class="nav-item">
+                        <a class="nav-link fw-bold" href="{% url 'liste_paniers' %}">🛍️ Paniers</a>
+                    </li>
+    
+                    <!-- Dashboard (Dropdown) -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle fw-bold" href="#" id="dashboardDropdown" role="button" data-bs-toggle="dropdown">
+                            📊 Dashboard
+                        </a>
+                        <ul class="dropdown-menu border-0 shadow">
+                            <li><a class="dropdown-item" href="{% url 'dashboard' %}">📊 Dashboard</a></li>
+                            <li><a class="dropdown-item" href="{% url 'dashboard_prix_produits' %}">💰 Dashboard Prix Produits</a></li>
+                            <li><a class="dropdown-item" href="{% url 'dashboard_inpc' %}">📈 Dashboard INPC</a></li>
+                        </ul>
+                    </li>
+    
+                    <!-- Déconnexion -->
+                    <li class="nav-item">
+                        <a href="#" class="nav-link text-danger fw-bold" data-bs-toggle="modal" data-bs-target="#logoutModal">🚪 Déconnexion</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    
+    
+    
+    
+    <div class="container mt-5">
+        <h2 class="text-success fw-bold">🏡 Liste des Communes</h2>
+    
+        <div class="d-flex align-items-center justify-content-between mb-3">
+            <!-- Formulaire Importation -->
+            <form action="{% url 'importer_communes' %}" method="post" enctype="multipart/form-data" class="d-flex align-items-center">
+                {% csrf_token %}
+                <input type="file" name="fichier_excel" class="form-control me-2" accept=".xlsx">
+                <button type="submit" class="btn btn-success">📥 Importer</button>
+            </form>
+    
+            <!-- Bouton Exportation -->
+            <a href="{% url 'exporter_communes' %}" class="btn btn-warning ms-2">📤 Exporter</a>
+    
+            <!-- Bouton Ajouter -->
+            <button type="button" class="btn btn-primary ms-3" data-bs-toggle="modal" data-bs-target="#addCommuneModal">
+                ➕ Ajouter une Commune
+            </button>
+        </div>
+    
+        <table class="table table-bordered table-hover">
+            <thead class="table-dark">
+                <tr>
+                    <th>Code</th>
+                    <th>Nom</th>
+                    <th>Moughataa</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for commune in communes %}
+                <tr>
+                    <td>{{ commune.code }}</td>
+                    <td>{{ commune.nom }}</td>
+                    <td>{{ commune.moughataa.nom }}</td>
+                    <td>
+                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editModal{{ commune.id }}">✏️ Modifier</button>
+                        <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal{{ commune.id }}">🗑️ Supprimer</button>
+                    </td>
+                </tr>
+
+                <!-- Modal Modifier -->
+                <div class="modal fade" id="editModal{{ commune.id }}" tabindex="-1">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Modifier la Commune</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                            </div>
+                            <div class="modal-body">
+                                <form method="post" action="{% url 'modifier_commune' commune.id %}">
+                                    {% csrf_token %}
+                                    <div class="mb-3">
+                                        <label class="form-label">Code</label>
+                                        <input type="text" class="form-control" name="code" value="{{ commune.code }}" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Nom</label>
+                                        <input type="text" class="form-control" name="nom" value="{{ commune.nom }}" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Moughataa</label>
+                                        <select class="form-control" name="moughataa" required>
+                                            {% for moughataa in moughataas %}
+                                            <option value="{{ moughataa.id }}" {% if commune.moughataa.id == moughataa.id %}selected{% endif %}>
+                                                {{ moughataa.nom }}
+                                            </option>
+                                            {% endfor %}
+                                        </select>
+                                    </div>
+                                    <button type="submit" class="btn btn-success">Enregistrer</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Modal Supprimer -->
+                <div class="modal fade" id="deleteModal{{ commune.id }}" tabindex="-1">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Supprimer la Commune</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                            </div>
+                            <div class="modal-body text-center">
+                                <p>⚠️ Êtes-vous sûr de vouloir supprimer <strong>{{ commune.nom }}</strong> ?</p>
+                            </div>
+                            <div class="modal-footer">
+                                <form method="post" action="{% url 'supprimer_commune' commune.id %}">
+                                    {% csrf_token %}
+                                    <button type="submit" class="btn btn-danger">🗑️ Supprimer</button>
+                                </form>
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <!-- Pagination -->
+        <nav aria-label="Page navigation">
+            <ul class="pagination justify-content-center">
+                {% if communes.has_previous %}
+                    <li class="page-item">
+                        <a class="page-link" href="?page={{ communes.previous_page_number }}">« Précédent</a>
+                    </li>
+                {% endif %}
+        
+                {% for num in communes.paginator.page_range %}
+                    {% if num > communes.number|add:"-5" and num < communes.number|add:"5" %}
+                        <li class="page-item {% if num == communes.number %}active{% endif %}">
+                            <a class="page-link" href="?page={{ num }}">{{ num }}</a>
+                        </li>
+                    {% endif %}
+                {% endfor %}
+        
+                {% if communes.has_next %}
+                    <li class="page-item">
+                        <a class="page-link" href="?page={{ communes.next_page_number }}">Suivant »</a>
+                    </li>
+                {% endif %}
+            </ul>
+        </nav>
+        
+    </div>
+
+    <!-- Modal Ajouter -->
+    <div class="modal fade" id="addCommuneModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Ajouter une Commune</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form method="post" action="{% url 'ajouter_commune' %}">
+                        {% csrf_token %}
+                        <div class="mb-3">
+                            <label class="form-label">Code</label>
+                            <input type="text" class="form-control" name="code" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Nom</label>
+                            <input type="text" class="form-control" name="nom" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Moughataa</label>
+                            <select class="form-control" name="moughataa" required>
+                                {% for moughataa in moughataas %}
+                                <option value="{{ moughataa.id }}">{{ moughataa.nom }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-success">Ajouter</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
