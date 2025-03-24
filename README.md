@@ -1,6 +1,5 @@
 <p align="center">
-  <img src="https://placehold.co/800x250/000000/FFFFFF?text=Suivi+de+l%27Indice+des+Prix+à+la+Consommation+en+Mauritanie&font=roboto"
- alt="Bannière du projet">
+  
 </p>
 
 <h1 align="center">📊 Suivi de l'Indice des Prix à la Consommation en Mauritanie</h1>
