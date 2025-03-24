@@ -1,46 +1,53 @@
-# 📊 Suivi de l'Indice des Prix à la Consommation en Mauritanie
+<p align="center">
+  <img src="https://via.placeholder.com/800x250?text=Suivi+de+l'Indice+des+Prix+à+la+Consommation+en+Mauritanie" alt="Bannière du projet">
+</p>
 
-> **Une plateforme web interactive pour analyser l'évolution de l'IPC en Mauritanie.**  
-> 🔍 Suivi des prix | 📈 Visualisation des tendances | 💰 Indicateurs économiques  
+<h1 align="center">📊 Suivi de l'Indice des Prix à la Consommation en Mauritanie</h1>
+
+<p align="center">
+  <b>Une plateforme interactive pour analyser l'évolution de l'IPC en Mauritanie.</b>  
+</p>
+
+<p align="center">
+  🔍 <i>Suivi des prix</i> | 📈 <i>Visualisation des tendances</i> | 💰 <i>Indicateurs économiques</i>  
+</p>
 
 ---
 
 ## 🌍 Table des Matières  
-1. [📖 Description du Projet](#-description-du-projet)  
-2. [🎯 Objectif](#-objectif)  
-3. [⚙️ Technologies Utilisées](#%EF%B8%8F-technologies-utilisées)  
-4. [🚀 Fonctionnalités Clés](#-fonctionnalités-clés)  
-5. [📸 Aperçu Visuel](#-aperçu-visuel)  
-6. [📦 Installation & Utilisation](#-installation--utilisation)  
-7. [🛠️ Améliorations Possibles](#%EF%B8%8F-améliorations-possibles)  
-8. [📬 Contact](#-contact)  
+🔹 [📖 Description du Projet](#-description-du-projet)  
+🔹 [🎯 Objectif](#-objectif)  
+🔹 [⚙️ Technologies Utilisées](#%EF%B8%8F-technologies-utilisées)  
+🔹 [🚀 Fonctionnalités Clés](#-fonctionnalités-clés)  
+🔹 [📸 Aperçu Visuel](#-aperçu-visuel)  
+🔹 [📦 Installation & Utilisation](#-installation--utilisation)  
+🔹 [💡 Améliorations Futures](#-améliorations-futures)  
+🔹 [📬 Contact](#-contact)  
 
 ---
 
 ## 📖 Description du Projet  
-Ce projet est une **plateforme web** permettant de **suivre et analyser** l'évolution de l'Indice des Prix à la Consommation (**IPC**) en Mauritanie.  
-
-🔹 Interface interactive pour explorer les données 📊  
-🔹 Outils d'analyse avancés pour les économistes et décideurs 🏦  
+> **Un outil moderne pour comprendre l'évolution des prix en Mauritanie.**  
+📊 Interface intuitive pour explorer les variations de prix  
+📉 Analyse détaillée des tendances économiques  
+🛒 Comparaison des catégories de produits  
 
 ---
 
 ## 🎯 Objectif  
-**💡 Offrir une visualisation claire et dynamique des tendances économiques.**  
-✔️ Faciliter l'accès aux données d'inflation  
-✔️ Aider à la prise de décision économique et financière  
+💡 **Offrir une visualisation dynamique et précise des tendances économiques.**  
 
-**🛠️ Public cible :**  
-📊 **Économistes & chercheurs**  
-📈 **Gouvernements & institutions**  
-💰 **Entrepreneurs & investisseurs**  
-🏠 **Citoyens curieux de l’inflation**  
+🎯 **Pour qui ?**  
+✔️ **Économistes & chercheurs** 📊  
+✔️ **Gouvernements & institutions** 📈  
+✔️ **Entrepreneurs & investisseurs** 💰  
+✔️ **Citoyens curieux des tendances économiques** 🏠  
 
 ---
 
 ## ⚙️ Technologies Utilisées  
 
-| Technologie | Rôle |
+| 🛠️ Technologie | 🚀 Rôle |
 |------------|------|
 | 🐍 **Python** | Backend et traitement des données |
 | 🌍 **Django** | Développement du serveur web |
@@ -52,22 +59,23 @@ Ce projet est une **plateforme web** permettant de **suivre et analyser** l'évo
 ---
 
 ## 🚀 Fonctionnalités Clés  
-✅ **Tableau de bord interactif** – Visualisation des prix par produit et région  
-✅ **Filtres avancés** – Recherche par catégorie, date, région  
-✅ **Graphiques dynamiques** – Courbes, histogrammes, heatmaps  
-✅ **API RESTful** – Accès aux données JSON  
-✅ **Mode Admin** – Gestion des données via Django Admin  
-✅ **Déploiement Dockerisé** – Facile à exécuter sans config complexe  
+✅ **📊 Tableau de bord interactif** – Suivi des prix par produit et région  
+✅ **🔍 Filtres avancés** – Catégories, périodes spécifiques  
+✅ **📈 Visualisation dynamique** – Graphiques (courbes, heatmaps, histogrammes...)  
+✅ **📡 API RESTful** – Récupération des données JSON  
+✅ **🔐 Mode Admin** – Gestion des données via Django Admin  
+✅ **🐳 Déploiement Dockerisé** – Exécution rapide sans dépendances locales  
 
 ---
 
 ## 📸 Aperçu Visuel  
 
-| Tableau de bord 📊 | Analyse des prix 🏷️ |
-|--------------------|--------------------|
-| ![Dashboard](https://via.placeholder.com/600x300) | ![Graphiques](https://via.placeholder.com/600x300) |
+<p align="center">
+  <img src="https://via.placeholder.com/600x300?text=Tableau+de+Bord+IPC" alt="Tableau de bord">
+  <img src="https://via.placeholder.com/600x300?text=Graphiques+dynamiques" alt="Graphiques dynamiques">
+</p>
 
-> 🖼️ **Ajoute des captures d'écran ici !**  
+> **Ajoute ici des captures d’écran réelles de ton projet !**  
 
 ---
 
